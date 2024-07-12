@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+use System\Application;
+use System\Commands\GreetCommand;
+use System\Commands\ServeCommand;
+use System\Commands\MakeViewCommand;
+use System\Commands\MakeModelCommand;
+use System\Commands\MakeControllerCommand;
+
+
+
+require_once 'system/AutoLoad.php';
+
+
+
+$app = new Application();
+$app->addCommand(new GreetCommand());
+$app->addCommand(new MakeModelCommand());
+$app->addCommand(new MakeControllerCommand());
+$app->addCommand(new MakeViewCommand());
+$app->addCommand(new ServeCommand());
+$app->run();
